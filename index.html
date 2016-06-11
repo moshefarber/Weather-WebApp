@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Weather App</title>
+	<link rel="stylesheet" href=style.css>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script src="script.js"></script>
 </head>
@@ -13,13 +14,51 @@
 			<input id="submit" type="Submit" name="in" >
 		</form>	
 		<div id="results">
-			<div id='Location'></div>
-			<div id='Temperature_F'></div>
-			<div id='Temperature_C'></div>
-			<div id='Feels_like'></div>
-			<div id='img_description'></div>
-			<div id='gif_img'></div>
+			<div id="current_result">
+				<div id='Location'></div>
+				<div id='Temperature_F'></div>
+				<div id='Temperature_C'></div>
+				<div id='Feels_like'></div>
+				<div id='img_description'></div>
+				<div id='gif_img'></div>
+			</div>
+			<div id="7-dayResults">
+				<div id="Sun">
+					<div id="Sun_data"></div>
+					<div id="Sun_img"></div>
+				</div>
 
+				<div id="Mon" class="7-day">
+					<div id="Mon_data"></div>
+					<div id="Mon_img"></div>
+				</div>
+				<div id="Tue" class="7-day">
+					<div id="Tue_data"></div>
+					<div id="Tue_img"></div>
+
+				</div>
+				<div id="Wed" class="7-day">
+					<div id="Wed_data"></div>
+					<div id="Wed_img"></div>
+
+				</div>
+				<div id="Thu" class="7-day">
+					<div id="Thu_data"></div>
+					<div id="Thu_img"></div>
+
+				</div>
+				<div id="Fri" class="7-day">
+					<div id="Fri_data"></div>
+					<div id="Fri_img"></div>
+
+				</div>
+				<div id="Sat" class="7-day">
+					<div id="Sat_data"></div>
+					<div id="Sat_img"></div>
+
+				</div>
+			
+			</div>
 		</div>
 	
 </body>
