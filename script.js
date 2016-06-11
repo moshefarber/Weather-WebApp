@@ -24,10 +24,21 @@ $(document).ready(function(){
     		url: url,
         dataType : "jsonp",
   			success : function(response) {
-  				var location = response['location']['city'];
-  				var temp_f = response['current_observation']['temp_f'];
-  				alert("Current temperature in " + location + " is: " + temp_f);
           console.log(response);
+
+  				var location = response['location']['city']+','+response['location']['state']+','+response['location']['zip'];
+  				var temp_f = response['current_observation']['temp_f'];
+          var temp_c = response['current_observation']['temp_c'];
+          var feels_like=response['current_observation']['feelslike_f'];
+          var description=response['current_observation']['weather'];
+          var gif_url=response['current_observation']['icon_url'];
+
+          $("#Location").html(location);
+          $("#Temperature_F").html("farenheit: "+temp_f);
+          $("#Temperature_C").html("celcius: "+temp_c);
+          $("#Feels_like").html("Feels Like: "+feels_like);
+          $("#img_description").html(description);
+          document.getElementById('gif_img').innerHTML="<img src= "+gif_url+">";   
  			 }
 		});
     });
