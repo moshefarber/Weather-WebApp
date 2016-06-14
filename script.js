@@ -2,6 +2,7 @@ $(document).ready(function(){
 
   //When the submit button is clicked, execute this function
 	$("#submit").click("Submit",function(e){
+  
     e.preventDefault()
 
     var inputData='';
@@ -24,10 +25,10 @@ $(document).ready(function(){
     		url: url,
         dataType : "jsonp",
   			success : function(response) {
-          console.log(response);
+         // console.log(response);
 
           //variables extracted from JSON response for current conditions
-  				var location = response['location']['city']+','+response['location']['state']+','+response['location']['zip'];
+  				var location = response['location']['city']+', '+response['location']['state']+', '+response['location']['zip'];
   				var temp_f = response['current_observation']['temp_f'];
           var temp_c = response['current_observation']['temp_c'];
           var feels_like=response['current_observation']['feelslike_f'];
@@ -36,10 +37,10 @@ $(document).ready(function(){
 
           //Variables are set to the html page for current Conditions
           $("#Location").html(location);
-          $("#Temperature_F").html("farenheit: "+temp_f);
-          $("#Temperature_C").html("celcius: "+temp_c);
-          $("#Feels_like").html("Feels Like: "+feels_like);
-          $("#img_description").html(description);
+          $("#Temperature_F").html(temp_f+" °F");
+          $("#Temperature_C").html(temp_c+" °C");
+          $("#Feels_like").html("Feels Like: "+feels_like + " °F");
+          $("#img_description").html(description );
           document.getElementById('gif_img').innerHTML="<img src= "+gif_url+">";
 
           //7 Day forecast
@@ -55,7 +56,7 @@ $(document).ready(function(){
           //Monday
           var object= (response.forecast.simpleforecast.forecastday);
           object=object["3"];
-          console.log(object);
+          //console.log(object);
           daily_gif = object.icon_url;
           $("#Mon_data").html("Monday:"+"<br>" +"High: "+object.high.fahrenheit+ "<br>"+"Low: "+object.low.fahrenheit);
           document.getElementById('Mon_img').innerHTML="<img src="+daily_gif+">";
@@ -63,7 +64,7 @@ $(document).ready(function(){
           //Tuesday
           var object= (response.forecast.simpleforecast.forecastday);
           object=object["4"];
-          console.log(object);
+          //console.log(object);
           daily_gif = object.icon_url;
           $("#Tue_data").html("Tuesday:"+"<br>" +"High: "+object.high.fahrenheit+ "<br>"+"Low: "+object.low.fahrenheit);
           document.getElementById('Tue_img').innerHTML="<img src="+daily_gif+">";
@@ -71,7 +72,7 @@ $(document).ready(function(){
           //Wednesday
           var object= (response.forecast.simpleforecast.forecastday);
           object=object["5"];
-          console.log(object);
+          //console.log(object);
           daily_gif = object.icon_url;
           $("#Wed_data").html("Wednesday:"+"<br>" +"High: "+object.high.fahrenheit+ "<br>"+"Low: "+object.low.fahrenheit);
           document.getElementById('Wed_img').innerHTML="<img src="+daily_gif+">";
@@ -80,7 +81,7 @@ $(document).ready(function(){
           //Thursday
           var object= (response.forecast.simpleforecast.forecastday);
           object=object["6"];
-          console.log(object);
+          //console.log(object);
           daily_gif = object.icon_url;
           $("#Thu_data").html("Thursday:"+"<br>" +"High: "+object.high.fahrenheit+ "<br>"+"Low: "+object.low.fahrenheit);
           document.getElementById('Thu_img').innerHTML="<img src="+daily_gif+">";
@@ -89,7 +90,7 @@ $(document).ready(function(){
           //Friday
           var object= (response.forecast.simpleforecast.forecastday);
           object=object["7"];
-          console.log(object);
+          //console.log(object);
           daily_gif = object.icon_url;
           $("#Fri_data").html("Friday:"+"<br>" +"High: "+object.high.fahrenheit+ "<br>"+"Low: "+object.low.fahrenheit);
           document.getElementById('Fri_img').innerHTML="<img src="+daily_gif+">";
@@ -98,7 +99,7 @@ $(document).ready(function(){
           //Saturday
           var object= (response.forecast.simpleforecast.forecastday);
           object=object["8"];
-          console.log(object);
+          //console.log(object);
           daily_gif = object.icon_url;
           $("#Sat_data").html("Saturday:"+"<br>" +"High: "+object.high.fahrenheit+ "<br>"+"Low: "+object.low.fahrenheit);
           document.getElementById('Sat_img').innerHTML="<img src="+daily_gif+">";
@@ -106,5 +107,8 @@ $(document).ready(function(){
 
  			 }
 		});
+
+
     });
+  
 });

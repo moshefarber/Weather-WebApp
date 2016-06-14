@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8"/>
 	<title>Weather App</title>
 	<link rel="stylesheet" href=style.css>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
@@ -15,15 +16,18 @@
 		</form>	
 		<div id="results">
 			<div id="current_result">
+			
 				<div id='Location'></div>
+				<div id='gif_img'></div>
+				<div id='img_description'></div>
 				<div id='Temperature_F'></div>
 				<div id='Temperature_C'></div>
 				<div id='Feels_like'></div>
-				<div id='img_description'></div>
-				<div id='gif_img'></div>
+				
+				
 			</div>
-			<div id="7-dayResults">
-				<div id="Sun">
+			<div id="sevenDayResults">
+				<div id="Sun" class="7-day">
 					<div id="Sun_data"></div>
 					<div id="Sun_img"></div>
 				</div>
