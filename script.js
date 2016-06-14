@@ -18,8 +18,10 @@ $(document).ready(function(){
 
     //concatanate input data to the url
     var url="http://api.wunderground.com/api/0f6bac9149f85ed4/forecast10day/geolookup/conditions/q";
+    console.log('address:'+address[0]);
+    inputData=inputData+'/';
     for(var i in address){
-        inputData=inputData+'/'+address[i];
+        inputData=inputData+address[i]+'%20';
     }
     url=url+inputData+".json";
     console.log(url);
@@ -116,10 +118,10 @@ $(document).ready(function(){
           console.log('city'+city);
           console.log('weather'+weather_desc);
 
-          gettyImages(state,weather_desc);
+          //gettyImages(state,weather_desc);
  			 }
 		});
-    
+    /*
     function gettyImages(state,weather_desc){
     var apiKey = '9upx676y8p8ufzwbjsu6q5fd';
     var keyWord =weather_desc+" sky";
@@ -146,7 +148,7 @@ $(document).ready(function(){
           alert(JSON.stringify(data,2))
      });
    }
-
+  */
     });
   
 });
