@@ -1,9 +1,61 @@
+html, body{
+	height: 100%;
+	width: 100%;
+	font-family: Helvetica Neue;
+}
 #current_result{
-	
 	background-color: red;
+	margin-top: 15px;
+	padding-left: 100px;
+	padding-bottom: 200px;
+	padding-top: 200px;
+}
+#Location{
+	font-size: 50px;
+	margin-bottom: 10px;
+}
+#gif_img{
+	margin-bottom: 15px;
+
+}
+#img_description{
+	font-size: 35px;
+}
+#Temperature_F{
+	font-size: 35px;
+}
+#Sun{
+	float: left;
+	padding: 35px;
+}
+#Mon{
+	float: left;
+	padding: 35px;
+}
+#Tue{
+	float: left;
+	padding: 35px;
+}
+#Wed{
+	float: left;
+	padding: 35px;
+}
+#Thu{
+	float: left;
+	padding: 35px;
+}
+#Fri{
+	float: left;
+	padding: 35px;
+}
+#Sat{
+	float: left;
+	padding: 35px;
+}
+#sevenDayResults{
+	width:90%;
+	margin: auto;
 }
 
 
-.7-day{
-	border:solid;
-}
+
