@@ -10,17 +10,25 @@
 <body>
 
 <script src="script.js"></script>
-	<div class="search">
-		<form class="sb-search">
-			<input id="search-box" type="text" placeholder="City State, or Zip Code...">
-			<button id="submit" type="Submit" name="in" >Search</button>
-		</form>	
+
+	<div id="nav-bar">
+		<ul>
+			<li><a href=index.html>Home</a></li>
+			<li><a href=about.html>About</a></li>
+		</ul>
 	</div>
+	
 		<div id="results">
 			<div id="current_result">
-			
-				<div id='Location'></div>
-				<div id='gif_img'></div>
+			<div id='Location'></div>
+			<div id='gif_img'></div>
+				<div class="search">
+					<form class="sb-search">
+						<input id="search-box" type="text" placeholder="City State, or Zip Code...">
+						<button id="submit" type="Submit" name="in" >Search</button>
+					</form>	
+				</div>
+				
 				<div id='img_description'></div>
 				<div id='Temperature_F'></div>
 				<div id='Temperature_C'></div>

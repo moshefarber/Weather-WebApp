@@ -126,7 +126,7 @@ $(document).ready(function(){
     console.log('weather_desc = '+keyWord);
     $.ajax({
         type:'GET',
-        url:"https://api.gettyimages.com:443/v3/search/images?phrase="+keyWord,
+        url:"https://api.gettyimages.com/v3/search/images?fields=id,title,thumb,referral_destinations&sort_order=best&phrase="+keyWord,
          beforeSend: function (request)
             {
                 request.setRequestHeader("Api-Key", apiKey);
