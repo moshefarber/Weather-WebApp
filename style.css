@@ -2,13 +2,16 @@ html, body{
 	height: 100%;
 	width: 100%;
 	font-family: Helvetica Neue;
+	font-size: 20px;
 }
 #current_result{
-	background-color: red;
+	background-image: url('img1.jpeg');
 	margin-top: 15px;
 	padding-left: 100px;
 	padding-bottom: 200px;
 	padding-top: 200px;
+	background-size: 100%;
+	height: 80%
 }
 #Location{
 	font-size: 50px;
@@ -23,6 +26,11 @@ html, body{
 }
 #Temperature_F{
 	font-size: 35px;
+}
+#Feels_like{
+	margin-top: 50px;
+	font-size: 25px;
+
 }
 #Sun{
 	float: left;
