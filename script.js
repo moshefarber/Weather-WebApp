@@ -3,7 +3,7 @@ $(document).ready(function(){
   
   //When the submit button is clicked, execute this function
 	$("#submit").click("Submit",function(e){
-  function displayWeather(){
+  
     e.preventDefault()
 
     var inputData='';
@@ -124,7 +124,7 @@ $(document).ready(function(){
    
           setInterval(function(){   
             $(".symbols").animate({height: "80px", width:"80px"})
-            $(".symbols").animate({height: "60px", width:"60px"})
+            $(".symbols").animate({height: "60px", width:"70px"})
           }, 3000)
           //gettyImages(state,weather_desc);
       
