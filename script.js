@@ -3,7 +3,7 @@ $(document).ready(function(){
   
   //When the submit button is clicked, execute this function
 	$("#submit").click("Submit",function(e){
-  
+  function displayWeather(){
     e.preventDefault()
 
     var inputData='';
@@ -17,7 +17,7 @@ $(document).ready(function(){
     address=address.split(',');
 
     //concatanate input data to the url
-    var url="http://api.wunderground.com/api/0f6bac9149f85ed4/forecast10day/geolookup/conditions/q";
+    var url="http://api.wunderground.com/api/0f6bac9149f85ed4/webcams/forecast10day/geolookup/conditions/q";
     console.log('address:'+address[0]);
     inputData=inputData+'/';
     for(var i in address){
@@ -53,7 +53,9 @@ $(document).ready(function(){
           $("#Temperature_C").html(temp_c+" °C");
           $("#Feels_like").html("Feels Like "+feels_like + " °F");
           $("#img_description").html(description );
-          document.getElementById('gif_img').innerHTML="<img src= "+gif_url+">";
+          document.getElementById('gif_img').innerHTML="<img id=main_symbol class=symbols src= "+gif_url+">";
+
+
 
           //7 Day forecast
           var object= (response.forecast.simpleforecast.forecastday);
@@ -63,7 +65,7 @@ $(document).ready(function(){
           object=object["9"];
           daily_gif = object.icon_url;
           $("#Sun_data").html("Sunday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Sun_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Sun_img').innerHTML="<img class=symbols src="+daily_gif+">";
           
           //Monday
           var object= (response.forecast.simpleforecast.forecastday);
@@ -71,7 +73,7 @@ $(document).ready(function(){
           //console.log(object);
           daily_gif = object.icon_url;
           $("#Mon_data").html("Monday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Mon_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Mon_img').innerHTML="<img class=symbols src="+daily_gif+">";
 
           //Tuesday
           var object= (response.forecast.simpleforecast.forecastday);
@@ -79,7 +81,7 @@ $(document).ready(function(){
           //console.log(object);
           daily_gif = object.icon_url;
           $("#Tue_data").html("Tuesday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Tue_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Tue_img').innerHTML="<img class=symbols src="+daily_gif+">";
 
           //Wednesday
           var object= (response.forecast.simpleforecast.forecastday);
@@ -87,7 +89,7 @@ $(document).ready(function(){
           //console.log(object);
           daily_gif = object.icon_url;
           $("#Wed_data").html("Wednesday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Wed_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Wed_img').innerHTML="<img class=symbols src="+daily_gif+">";
 
 
           //Thursday
@@ -96,7 +98,7 @@ $(document).ready(function(){
           //console.log(object);
           daily_gif = object.icon_url;
           $("#Thu_data").html("Thursday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Thu_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Thu_img').innerHTML="<img class=symbols src="+daily_gif+">";
 
 
           //Friday
@@ -105,7 +107,7 @@ $(document).ready(function(){
           //console.log(object);
           daily_gif = object.icon_url;
           $("#Fri_data").html("Friday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Fri_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Fri_img').innerHTML="<img class=symbols src="+daily_gif+">";
 
 
           //Saturday
@@ -114,13 +116,21 @@ $(document).ready(function(){
           //console.log(object);
           daily_gif = object.icon_url;
           $("#Sat_data").html("Saturday"+"<br>" +"High: "+object.high.fahrenheit+" °F"+ "<br>"+"Low: "+object.low.fahrenheit+" °F");
-          document.getElementById('Sat_img').innerHTML="<img src="+daily_gif+">";
+          document.getElementById('Sat_img').innerHTML="<img class=symbols src="+daily_gif+">";
           console.log('city'+city);
           console.log('weather'+weather_desc);
 
+         
+   
+          setInterval(function(){   
+            $(".symbols").animate({height: "80px", width:"80px"})
+            $(".symbols").animate({height: "60px", width:"60px"})
+          }, 3000)
           //gettyImages(state,weather_desc);
+      
  			 }
 		});
+
     /*
     function gettyImages(state,weather_desc){
     var apiKey = '9upx676y8p8ufzwbjsu6q5fd';

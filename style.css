@@ -26,7 +26,12 @@ html, body{
 }
 #gif_img{
 	margin-bottom: 15px;
-
+	height:90px;
+	width: 90px;
+}
+#main_symbol{
+	height:80px;
+	height:80px;
 }
 #img_description{
 	font-size: 35px;
@@ -210,5 +215,4 @@ li a {
 li a:hover {
     background-color: #111;
 }
-
 
