@@ -4,7 +4,8 @@ $(document).ready(function(){
   //When the submit button is clicked, execute this function
 	$("#submit").click("Submit",function(e){
   
-    e.preventDefault()
+    e.preventDefault();
+    $(".search").hide();
 
     var inputData='';
 
@@ -53,7 +54,42 @@ $(document).ready(function(){
           $("#Temperature_C").html(temp_c+" °C");
           $("#Feels_like").html("Feels Like "+feels_like + " °F");
           $("#img_description").html(description );
+          if(weather_desc==="Drizzle" || weather_desc==="Rain" || weather_desc==="Rain Showers" || weather_desc==="Freezing Rain" || weather_desc==="Light Rain"){
+            document.body.style.backgroundImage = "url('images/rain.jpg')";
+          }
+          if(weather_desc==="Snow" || weather_desc==="Snow Grains" || weather_desc==="Low Drifting Snow" || weather_desc==="Blowing Snow" 
+            || weather_desc==="Snow Showers"){
+            document.body.style.backgroundImage = "url('images/snow.jpg')";
+          }
+          if(weather_desc==="Mist" || weather_desc==="Rain Mist"){
+            document.body.style.backgroundImage = "url('images/mist.jpg')";
+          }
+          if(weather_desc==="Fog" || weather_desc==="Fog Patches" || weather_desc==="Freezing Fog" || weather_desc==="Patches of Fog" 
+            || weather_desc==="Shallow Fog" || weather_desc==="Partial Fog"){
+            document.body.style.backgroundImage = "url('images/fog.jpg')";
+          }
+          if(weather_desc==="Thunderstorm" || weather_desc==="Thunderstorms and Rain" || weather_desc==="Thunderstorms and Snow"){
+            document.body.style.backgroundImage = "url('images/thunderstorm.jpg')";
+          }
+          if(weather_desc==="Overcast"){
+            document.body.style.backgroundImage = "url('images/overcast.jpg')";
+          }
+          if(weather_desc==="Clear"){
+            document.body.style.backgroundImage = "url('images/clear.jpg')";
+          }
+          if(weather_desc==="Partly Cloudy" || weather_desc==="Mostly Cloudy" || weather_desc==="Scattered Clouds"){
+            document.body.style.backgroundImage = "url('images/cloudy.jpg')";
+          }
+
+          // document.body.style.backgroundImage = "url('images/snow_day.jpg')";
+          // $("#results").attr("style","background: url('images/partly_cloudy.jpg') center center; background-size: cover;")
+          //document.getElementById("results").style.backgroundImage = "url('images/partly_cloudy.jpg')";
+          //document.getElementById("results").style.backgroundSize = "url('images/partly_cloudy.jpg')";
+
           document.getElementById('gif_img').innerHTML="<img id=main_symbol class=symbols src= "+gif_url+">";
+          console.log(weather_desc);
+
+
 
 
 
@@ -159,6 +195,16 @@ $(document).ready(function(){
      });
    }
   */
+
+
+function background(weather_desc){
+    var keyWord =weather_desc;
+    console.log(weather_desc);
+    if(keyWord==="Scattered Clouds"){
+        document.getElementById('current_result').backgroundImage = "url('images/partly_cloudy.jpg')";
+};
+};
+
     });
   
 });
