@@ -5,6 +5,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color:white;
 }
 
 h2{
@@ -14,7 +15,8 @@ h2{
 
 #logo{
 	background-image: url("images/weatherLogo.png");
-	display:block;
+	/*display:block;*/
+    position:fixed;
 	width:100px;
 	height: 100px;
 	margin:100px;
@@ -26,7 +28,67 @@ img{
 	align:middle;
 
 }
+#Location{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+#gif_img{
+    margin-bottom: 15px;
+    height:90px;
+    width: 90px;
+}
+#background{
+    margin-bottom: 30px;
+    height:90px;
+    width: 90px;
+}
+#main_symbol{
+    height:80px;
+    height:80px;
+}
+#img_description{
+    font-size: 35px;
+}
+#Temperature_F{
+    font-size: 35px;
+}
+#Feels_like{
+    margin-top: 50px;
+    font-size: 25px;
 
+}
+#Sun{
+    float: left;
+    padding: 35px;
+}
+#Mon{
+    float: left;
+    padding: 35px;
+}
+#Tue{
+    float: left;
+    padding: 35px;
+}
+#Wed{
+    float: left;
+    padding: 35px;
+}
+#Thu{
+    float: left;
+    padding: 35px;
+}
+#Fri{
+    float: left;
+    padding: 35px;
+}
+#Sat{
+    float: left;
+    padding: 35px;
+}
+#sevenDayResults{
+    width:90%;
+    margin: auto;
+}
 
 /* search box */
 
