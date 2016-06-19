@@ -8,6 +8,41 @@ body{
     color:white;
 }
 
+.aboutBody{
+    background: url(images/about.jpg) no-repeat center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin:0 auto;
+}
+
+#aboutButton{
+    text-decoration: none;
+    font-size: 24px;
+    text-shadow: 2px 2px 8px black;
+    color: white;
+    display: inline;
+    font-weight: bold;
+    list-style-type: none;
+    /*margin-right: 35px;*/
+}
+.aboutDescription{
+    margin-top: 3%;
+  /*  padding-top:  15%;*/
+    float: left;
+    text-align: center;
+    font-family: Verdana;
+    font-size: x-large;
+    color:black;
+    /*margin: 0 -9999rem;*/
+    /* add back negative margin value */
+    /*padding: 0.25rem 9999rem;*/
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
 h2{
 	color:white;
 
